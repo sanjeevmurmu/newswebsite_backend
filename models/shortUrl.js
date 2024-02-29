@@ -23,7 +23,7 @@ const shortUrlSchema =new mongoose.Schema({
 shortUrlSchema.pre('save', function(next) {
     // Only generate a short URL if it doesn't already exist
     if (!this.short) {
-      this.short = `https://newswebsite-backend.onrender.com/${this.title.trim()}-` + uid.rnd();
+      this.short = `newswebsite-backend.onrender.com/${this.title.trim()}-` + uid.rnd();
     }
     next();
   });
